@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by UniConvertor 2.0rc5 (https://sk1project.net/) -->
+<svg xmlns="http://www.w3.org/2000/svg" height="35.009px" width="30.0px" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" id="362c5d4c-e8e4-11ed-9747-0242ac130007">
+<defs id="defs1">
+	<linearGradient y2="1.0" spreadMethod="pad" gradientUnits="userSpaceOnUse" x2="0.5" y1="-7.1054273576e-15" x1="0.5" id="grad1">
+		<stop style="stop-color:#fd9f00;stop-opacity:1.0;" offset="0.0" />
+		<stop style="stop-color:#f98d04;stop-opacity:1.0;" offset="1.0" />
+	</linearGradient>
+</defs>
+<g>
+	<g>
+		<path style="fill:url(#grad1);" d="M 30.0,15.0 C 30.0,23.2829 23.2829,30.0 15.0,30.0 6.7171,30.0 0.0,23.2829 0.0,15.0 0.0,6.7171 6.7171,-0.0 15.0,-0.0 23.2829,-0.0 30.0,6.7171 30.0,15.0 Z" />
+		<path style="fill:#ffffff;" d="M 11.001,7.0 L 18.98,15.0 11.001,23.0 17.442,15.0" />
+	</g>
+</g>
+</svg>

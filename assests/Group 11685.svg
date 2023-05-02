@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+  <g id="Group_11685" data-name="Group 11685" transform="translate(-337 -61)">
+    <g id="whatsapp-video-call-icon" transform="translate(343 69)">
+      <path id="Path_23482" data-name="Path 23482" d="M40.544,91.1h4a1.557,1.557,0,0,1,1.547,1.551v3.662a1.554,1.554,0,0,1-1.551,1.547h-4A1.554,1.554,0,0,1,39,96.313V92.651A1.557,1.557,0,0,1,40.551,91.1Z" transform="translate(-39 -91.1)" fill="#fff" fill-rule="evenodd"/>
+      <path id="Path_23483" data-name="Path 23483" d="M63.285,92.78,62,93.959l-.1.095v2.791l1.264,1.088c1.061.916,1.351,0,1.351-1.139V93.983c0-.811-.28-2.078-1.237-1.2Z" transform="translate(-54.163 -92.017)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+    <g id="Ellipse_2358" data-name="Ellipse 2358" transform="translate(337 61)" fill="none" stroke="#fff" stroke-width="0.5">
+      <circle cx="11" cy="11" r="11" stroke="none"/>
+      <circle cx="11" cy="11" r="10.75" fill="none"/>
+    </g>
+  </g>
+</svg>
