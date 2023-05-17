@@ -5,23 +5,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multi_vendor/Elements/List_view.dart';
 import 'package:multi_vendor/Elements/event_cataloge.dart';
 import 'package:multi_vendor/Listed%20Items/Listed_Items.dart';
-import 'package:multi_vendor/Payment%20Details/Payment_Method.dart';
 import 'package:multi_vendor/Profile%20Picture/profile_picture.dart';
 import 'package:multi_vendor/Search%20History/Discover_More.dart';
-import 'package:multi_vendor/Statistics/Statistic.dart';
-
 import '../Categories/Categories.dart';
+import '../Drawer/Drawer.dart';
 import '../Explore.dart';
+import '../Message/Alert.dart';
 
-class Home_Screen extends StatefulWidget {
+
+class Home_Screen extends StatelessWidget {
   const Home_Screen({Key? key}) : super(key: key);
-
-  @override
-  State<Home_Screen> createState() => _Home_ScreenState();
-}
-
-class _Home_ScreenState extends State<Home_Screen> {
-  bool isSwitched1 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,192 +25,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                 topRight: Radius.circular(80),
                 bottomRight: Radius.circular(80))),
         width: MediaQuery.of(context).size.width / 1.7,
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius:
-                      BorderRadius.only(topRight: Radius.circular(80)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 3,
-                      offset: Offset(1.0, 2.0),
-                    )
-                  ]),
-              height: 150,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                children: [
-                  SizedBox(height: 50),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage:
-                                  AssetImage("assests/Profile Pic.jpg"),
-                              radius: 18,
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              "Jaguar",
-                              style:
-                                  TextStyle(fontSize: 10, color: Colors.black),
-                            ),
-                          ],
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Color(0xffFD9F00),
-                              borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    blurRadius: 3,
-                                    offset: Offset(1.0, 2.0))
-                              ]),
-                          height: 35,
-                          width: 35,
-                          child: SvgPicture.asset(
-                            "assests/Open Drawer.svg",
-                            fit: BoxFit.scaleDown,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Divider(
-                      thickness: 0.2,
-                      color: Color(0xff828281),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Row(
-                children: [
-                  SvgPicture.asset("assests/Statistics.svg"),
-                  SizedBox(width: 5),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (BuildContext context) {
-                        return Statistic();
-                      }));
-                    },
-                    child: Text(
-                      "Statistics",
-                      style: TextStyle(fontSize: 9, color: Color(0xff747474)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Row(
-                children: [
-                  SvgPicture.asset("assests/Language.svg"),
-                  SizedBox(width: 5),
-                  InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (BuildContext context) {
-                        return Payment_Method();
-                      }));
-                    },
-                    child: Text(
-                      "Language",
-                      style: TextStyle(fontSize: 9, color: Color(0xff747474)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      SvgPicture.asset("assests/Bell.svg"),
-                      SizedBox(width: 5),
-                      Text("Notification",
-                          style:
-                              TextStyle(fontSize: 9, color: Color(0xff747474))),
-                    ],
-                  ),
-                  Switch(
-                      activeColor: Color(0xffFD9F00),
-                      activeTrackColor: Colors.white,
-                      inactiveTrackColor: Colors.grey,
-                      value: isSwitched1,
-                      onChanged: (value) {
-                        print("VALUE:$value");
-                        setState(() {
-                          isSwitched1 = value;
-                        });
-                      }),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Row(
-                children: [
-                  SvgPicture.asset("assests/Help & Support.svg"),
-                  SizedBox(width: 5),
-                  Text(
-                    "Help & Support",
-                    style: TextStyle(fontSize: 9, color: Color(0xff747474)),
-                  ),
-                ],
-              ),
-            ),
-            Spacer(),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Row(
-                children: [
-                  SvgPicture.asset("assests/About.svg"),
-                  SizedBox(width: 5),
-                  Text(
-                    "About",
-                    style: TextStyle(fontSize: 9, color: Color(0xff747474)),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.only(left: 15),
-              child: Row(
-                children: [
-                  SvgPicture.asset("assests/Logout.svg"),
-                  SizedBox(width: 5),
-                  Text(
-                    "Logout",
-                    style: TextStyle(fontSize: 9, color: Color(0xff747474)),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 30),
-          ],
-        ),
+        child: DrawerPage()
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -289,8 +97,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                                             blurRadius: 3,
                                             offset: Offset(1.0, 2.0))
                                       ]),
-                                  height: 35,
-                                  width: 35,
+                                  height: 33,
+                                  width: 33,
                                   child: SvgPicture.asset(
                                     "assests/Home page search box.svg",
                                     fit: BoxFit.scaleDown,
@@ -302,9 +110,31 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) {
-                                    return Profile_Picture();
+                                    return Alert();
                                   }));
                                 },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey,
+                                          blurRadius: 3,
+                                          offset: Offset(1.0, 2.0),
+                                        )
+                                      ]),
+                                  height: 33,
+                                  width: 33,
+                                  child: SvgPicture.asset(
+                                    "assests/Notifications.svg",
+                                    fit: BoxFit.scaleDown,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 10),
+                              InkWell(
+                                onTap: () {},
                                 child: CircleAvatar(
                                   backgroundImage:
                                       AssetImage("assests/Profile Pic.jpg"),
@@ -341,7 +171,27 @@ class _Home_ScreenState extends State<Home_Screen> {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(right: 15),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return Categories();
+                      }));
+                    },
+                    child: Text("View all",
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0xff33393A),
+                        )),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Row(
@@ -429,22 +279,15 @@ class _Home_ScreenState extends State<Home_Screen> {
                           color: Color(0xff33393A),
                           fontWeight: FontWeight.bold),
                     ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (BuildContext context) {
-                          return Categories();
-                        }));
-                      },
-                      child: Text("View all",
-                          style: TextStyle(
-                            fontSize: 8,
-                            color: Color(0xff33393A),
-                          )),
-                    ),
+                    Text("View all",
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0xff33393A),
+                        )),
                   ],
                 ),
               ),
+              SizedBox(height: 10),
               Container(
                   height: 230,
                   child: GridView(
@@ -455,10 +298,18 @@ class _Home_ScreenState extends State<Home_Screen> {
                         crossAxisSpacing: 10,
                         mainAxisExtent: 180),
                     children: [
-                      EventCataloge(
-                        img_name: "assests/Susnain night 1.png",
-                        event_name: "Susnain Night",
-                        name: "Sep 15, 2023",
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return Profile_Picture();
+                          }));
+                        },
+                        child: EventCataloge(
+                          img_name: "assests/Susnain night 1.png",
+                          event_name: "Susnain Night",
+                          name: "Sep 15, 2023",
+                        ),
                       ),
                       EventCataloge(
                         img_name: "assests/Susnain night 3.png",
@@ -559,7 +410,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                       },
                       child: Text(
                         "View all",
-                        style: TextStyle(fontSize: 8, color: Color(0xff33393A)),
+                        style:
+                            TextStyle(fontSize: 10, color: Color(0xff33393A)),
                       ),
                     )
                   ],
@@ -569,7 +421,7 @@ class _Home_ScreenState extends State<Home_Screen> {
               SizedBox(
                 height: 80,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -589,7 +441,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 )
                               ]),
                           height: 70,
-                          width: MediaQuery.of(context).size.width / 3,
+                          width: MediaQuery.of(context).size.width / 2.5,
                           child: Row(
                             children: [
                               Image.asset("assests/Recent view 1.png"),
@@ -600,18 +452,17 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8,
+                                        fontSize: 10,
                                         color: Color(0xff585D5E),
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "Art & Humanities",
                                     style: TextStyle(
-                                        fontSize: 7, color: Color(0xffACACAC)),
+                                        fontSize: 8, color: Color(0xffACACAC)),
                                   ),
-                                  SizedBox(height: 5),
                                   Padding(
-                                    padding: const EdgeInsets.only(left: 6),
+                                    padding: const EdgeInsets.only(left: 14),
                                     child: Container(
                                       decoration: BoxDecoration(
                                           color: Colors.white,
@@ -625,8 +476,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                                                 offset: Offset(1.0, 2.0))
                                           ]),
                                       height: 15,
-                                      width: MediaQuery.of(context).size.width /
-                                          6.5,
+                                      width:
+                                          MediaQuery.of(context).size.width / 5,
                                       child: Padding(
                                         padding: const EdgeInsets.only(left: 5),
                                         child: Row(
@@ -634,11 +485,12 @@ class _Home_ScreenState extends State<Home_Screen> {
                                             Text(
                                               "4.5",
                                               style: TextStyle(
-                                                  fontSize: 7,
+                                                  fontSize: 9,
                                                   color: Color(0xff4CC171)),
                                             ),
+                                            SizedBox(width: 5),
                                             RatingBar.builder(
-                                              itemSize: 8,
+                                              itemSize: 9,
                                               initialRating: 3,
                                               minRating: 1,
                                               direction: Axis.horizontal,
@@ -691,7 +543,8 @@ class _Home_ScreenState extends State<Home_Screen> {
                       },
                       child: Text(
                         "View all",
-                        style: TextStyle(fontSize: 8, color: Color(0xff33393A)),
+                        style:
+                            TextStyle(fontSize: 10, color: Color(0xff33393A)),
                       ),
                     ),
                   ],
@@ -701,7 +554,7 @@ class _Home_ScreenState extends State<Home_Screen> {
               SizedBox(
                 height: 80,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
@@ -721,7 +574,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                                 )
                               ]),
                           height: 70,
-                          width: MediaQuery.of(context).size.width / 3,
+                          width: MediaQuery.of(context).size.width / 2.5,
                           child: Row(
                             children: [
                               Image.asset("assests/Recent view 2.png"),
@@ -732,61 +585,69 @@ class _Home_ScreenState extends State<Home_Screen> {
                                   Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8,
+                                        fontSize: 10,
                                         color: Color(0xff585D5E),
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     "Art & Humanities",
                                     style: TextStyle(
-                                        fontSize: 7, color: Color(0xffACACAC)),
+                                        fontSize: 8, color: Color(0xffACACAC)),
                                   ),
-                                  SizedBox(height: 5),
                                   Padding(
                                     padding: const EdgeInsets.only(left: 6),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(32),
-                                              bottomLeft: Radius.circular(32)),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.grey,
-                                                blurRadius: 2,
-                                                offset: Offset(1.0, 2.0))
-                                          ]),
-                                      height: 15,
-                                      width: MediaQuery.of(context).size.width /
-                                          6.5,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(left: 5),
-                                        child: Row(
-                                          children: [
-                                            Text(
-                                              "4.5",
-                                              style: TextStyle(
-                                                  fontSize: 7,
-                                                  color: Color(0xff4CC171)),
-                                            ),
-                                            RatingBar.builder(
-                                              itemSize: 8,
-                                              initialRating: 3,
-                                              minRating: 1,
-                                              direction: Axis.horizontal,
-                                              allowHalfRating: false,
-                                              itemCount: 5,
-                                              itemPadding: EdgeInsets.symmetric(
-                                                  horizontal: 0),
-                                              itemBuilder: (context, _) => Icon(
-                                                Icons.star,
-                                                color: Colors.amber,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 8),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(32),
+                                                bottomLeft:
+                                                    Radius.circular(32)),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                  color: Colors.grey,
+                                                  blurRadius: 2,
+                                                  offset: Offset(1.0, 2.0))
+                                            ]),
+                                        height: 15,
+                                        width:
+                                            MediaQuery.of(context).size.width /
+                                                5,
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 5),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                "4.5",
+                                                style: TextStyle(
+                                                    fontSize: 9,
+                                                    color: Color(0xff4CC171)),
                                               ),
-                                              onRatingUpdate: (rating) {
-                                                print(rating);
-                                              },
-                                            )
-                                          ],
+                                              SizedBox(width: 5),
+                                              RatingBar.builder(
+                                                itemSize: 9,
+                                                initialRating: 3,
+                                                minRating: 1,
+                                                direction: Axis.horizontal,
+                                                allowHalfRating: false,
+                                                itemCount: 5,
+                                                itemPadding:
+                                                    EdgeInsets.symmetric(
+                                                        horizontal: 0),
+                                                itemBuilder: (context, _) =>
+                                                    Icon(
+                                                  Icons.star,
+                                                  color: Colors.amber,
+                                                ),
+                                                onRatingUpdate: (rating) {
+                                                  print(rating);
+                                                },
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ),

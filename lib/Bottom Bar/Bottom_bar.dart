@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:multi_vendor/Edit%20Profile/Edit_Profile.dart';
+import 'package:multi_vendor/Explore.dart';
 import 'package:multi_vendor/Home%20Screen/Home_Screen.dart';
 import 'package:multi_vendor/Message/Message.dart';
 import 'package:multi_vendor/New%20List/Add_New_List.dart';
-import 'package:multi_vendor/Search%20History/Discover_More.dart';
-
-import '../Profile Picture/Profile_1.dart';
 
 class Bottom_bar extends StatefulWidget {
   const Bottom_bar({Key? key}) : super(key: key);
@@ -16,11 +15,11 @@ class Bottom_bar extends StatefulWidget {
 
 class _Bottom_barState extends State<Bottom_bar> {
   static List<Widget> _widgetOptions = <Widget>[
-    Discover_More(),
+    Explore(),
     Home_Screen(),
     Add_New_List(),
     Message(),
-    Profile_1(),
+    Edit_Profile(),
     Text(
       'Index 1: Search',
       // style: optionStyle,

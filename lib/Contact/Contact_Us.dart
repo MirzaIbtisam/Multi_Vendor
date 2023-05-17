@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:multi_vendor/Message/Alert.dart';
 
 class Contact_Us extends StatelessWidget {
   const Contact_Us({Key? key}) : super(key: key);
@@ -48,22 +49,30 @@ class Contact_Us extends StatelessWidget {
                   ]),
                   Row(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(100),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 3,
-                                offset: Offset(1.0, 2.0),
-                              )
-                            ]),
-                        height: 30,
-                        width: 30,
-                        child: SvgPicture.asset(
-                          "assests/Notifications.svg",
-                          fit: BoxFit.scaleDown,
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return Alert();
+                          }));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(100),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 3,
+                                  offset: Offset(1.0, 2.0),
+                                )
+                              ]),
+                          height: 30,
+                          width: 30,
+                          child: SvgPicture.asset(
+                            "assests/Notifications.svg",
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
                       ),
                       SizedBox(width: 8),
@@ -103,7 +112,7 @@ class Contact_Us extends StatelessWidget {
                             contentPadding: EdgeInsets.only(top: 20),
                             hintText: "Name",
                             hintStyle:
-                                TextStyle(fontSize: 11, color: Colors.black)),
+                                TextStyle(fontSize: 12, color: Colors.black)),
                       ),
                     ),
                   )
@@ -126,7 +135,7 @@ class Contact_Us extends StatelessWidget {
                             contentPadding: EdgeInsets.only(top: 20),
                             hintText: "Email",
                             hintStyle:
-                                TextStyle(fontSize: 11, color: Colors.black)),
+                                TextStyle(fontSize: 12, color: Colors.black)),
                       ),
                     ),
                   )
@@ -140,7 +149,7 @@ class Contact_Us extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: Text(
                   "Information",
-                  style: TextStyle(fontSize: 11, color: Colors.black),
+                  style: TextStyle(fontSize: 12, color: Colors.black),
                 ),
               ),
             ),
@@ -164,9 +173,11 @@ class Contact_Us extends StatelessWidget {
                 height: 100,
                 width: MediaQuery.of(context).size.width / 1.1,
                 child: TextFormField(
+                  maxLines: 3,
                   decoration: InputDecoration(
                     border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(left: 10),
+                    contentPadding:
+                        EdgeInsets.only(left: 10, right: 10, top: 5),
                   ),
                 ),
               ),

@@ -16,12 +16,12 @@ class Fourth_Page extends StatelessWidget {
             SizedBox(height: 50),
             Text(
               "You did it,\n you're in.",
-              style: TextStyle(fontSize: 34, color: Colors.black),
+              style: TextStyle(fontSize: 35, color: Colors.black),
             ),
             SizedBox(height: 15),
             Text(
               "Welcome to Brazilian community,\n Book Your Service in One click!",
-              style: TextStyle(fontSize: 14, color: Color(0xff646464)),
+              style: TextStyle(fontSize: 15, color: Color(0xff646464)),
             ),
             SizedBox(height: 80),
             SizedBox(
@@ -29,7 +29,7 @@ class Fourth_Page extends StatelessWidget {
               height: 40,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (BuildContext context) {
                       return Sign_In();
                     }));

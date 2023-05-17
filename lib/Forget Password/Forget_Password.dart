@@ -88,7 +88,7 @@ class Forget_Password extends StatelessWidget {
                 decoration: InputDecoration(
                     hintText: "Enter your email",
                     hintStyle:
-                        TextStyle(fontSize: 14, color: Color(0xffCCCACA))),
+                        TextStyle(fontSize: 16, color: Color(0xffCCCACA))),
               ),
             ),
             SizedBox(height: 50),
@@ -96,7 +96,7 @@ class Forget_Password extends StatelessWidget {
               width: 150,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (BuildContext context) {
                       return Varification();
                     }));

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:multi_vendor/Mapping/Map_1.dart';
 
 import 'Developer.dart';
 
@@ -48,21 +47,13 @@ class Message extends StatelessWidget {
                     children: [
                       Text(
                         "Jaguar",
-                        style: TextStyle(fontSize: 12, color: Colors.black),
+                        style: TextStyle(fontSize: 13, color: Colors.black),
                       ),
                       SizedBox(width: 10),
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) {
-                            return Map_1();
-                          }));
-                        },
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage("assests/Profile Pic.jpg"),
-                          radius: 18,
-                        ),
+                      CircleAvatar(
+                        backgroundImage:
+                            AssetImage("assests/Profile Pic.jpg"),
+                        radius: 18,
                       ),
                     ],
                   ),
@@ -121,7 +112,7 @@ class Message extends StatelessWidget {
                           border: InputBorder.none,
                           hintText: "Type here...",
                           hintStyle:
-                              TextStyle(fontSize: 12, color: Color(0xff858381)),
+                              TextStyle(fontSize: 13, color: Color(0xff858381)),
                         ),
                       ),
                     ),
@@ -169,11 +160,11 @@ class Message extends StatelessWidget {
                         children: [
                           Text(
                             "Developer",
-                            style: TextStyle(fontSize: 12, color: Colors.black),
+                            style: TextStyle(fontSize: 13, color: Colors.black),
                           ),
                           Text(
                             "Sure, No Problems",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                         ],
                       )
@@ -218,11 +209,11 @@ class Message extends StatelessWidget {
                       children: [
                         Text(
                           "Jaguar",
-                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                         Text(
                           "Hi! I'd like to know how much it'll cost to me...",
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 12, color: Colors.black),
                         ),
                       ],
                     )
@@ -267,11 +258,11 @@ class Message extends StatelessWidget {
                       children: [
                         Text(
                           "Ali Abdi",
-                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                         Text(
                           "Hi! I'd like to know how much it'll cost to me...",
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 12, color: Colors.black),
                         ),
                       ],
                     )
@@ -314,11 +305,11 @@ class Message extends StatelessWidget {
                       children: [
                         Text(
                           "Josh",
-                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                         Text(
                           "Hi! I'd like to know how much it'll cost to me...",
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 12, color: Colors.black),
                         ),
                       ],
                     )
@@ -362,11 +353,11 @@ class Message extends StatelessWidget {
                       children: [
                         Text(
                           "Aimi",
-                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                         Text(
                           "Hi! I'd like to know how much it'll cost to me...",
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 12, color: Colors.black),
                         ),
                       ],
                     )
@@ -411,11 +402,11 @@ class Message extends StatelessWidget {
                       children: [
                         Text(
                           "Adi",
-                          style: TextStyle(fontSize: 12, color: Colors.black),
+                          style: TextStyle(fontSize: 13, color: Colors.black),
                         ),
                         Text(
                           "Hi! I'd like to know how much it'll cost to me...",
-                          style: TextStyle(fontSize: 11, color: Colors.black),
+                          style: TextStyle(fontSize: 12, color: Colors.black),
                         ),
                       ],
                     )

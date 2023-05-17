@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:multi_vendor/Message/Alert.dart';
 import 'package:multi_vendor/Profile%20Picture/Profile_1.dart';
-
 import '../Elements/Event_Categories.dart';
 
 class Categories extends StatelessWidget {
@@ -51,22 +51,30 @@ class Categories extends StatelessWidget {
                   ]),
                   Row(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(100),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 3,
-                                offset: Offset(1.0, 2.0),
-                              )
-                            ]),
-                        height: 30,
-                        width: 30,
-                        child: SvgPicture.asset(
-                          "assests/Notifications.svg",
-                          fit: BoxFit.scaleDown,
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return Alert();
+                          }));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(100),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 3,
+                                  offset: Offset(1.0, 2.0),
+                                )
+                              ]),
+                          height: 30,
+                          width: 30,
+                          child: SvgPicture.asset(
+                            "assests/Notifications.svg",
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
                       ),
                       SizedBox(width: 8),

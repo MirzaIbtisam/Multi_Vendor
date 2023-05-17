@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:multi_vendor/Contact/Contact_Us.dart';
-import 'package:multi_vendor/Edit%20Profile/Edit_Profile.dart';
 import 'package:multi_vendor/Elements/Related_List_View.dart';
 import 'package:multi_vendor/Elements/featured_list%20_view.dart';
+import 'package:multi_vendor/Listed%20Items/Listed_Items.dart';
 import 'package:multi_vendor/New%20List/Add_New_List.dart';
 
 class Profile_Picture extends StatelessWidget {
@@ -42,16 +40,16 @@ class Profile_Picture extends StatelessWidget {
                         Navigator.of(context).pop();
                       },
                       child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(100),
-                          ),
-                          height: 30,
-                          width: 30,
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 4),
-                            child: SvgPicture.asset("assests/Back arrow.svg"),
-                          ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        height: 30,
+                        width: 30,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 4),
+                          child: SvgPicture.asset("assests/Back arrow.svg"),
+                        ),
                       ),
                     ),
                   ),
@@ -83,23 +81,23 @@ class Profile_Picture extends StatelessWidget {
                                       Text(
                                         "Steve Garrett",
                                         style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
+                                            fontSize: 22, color: Colors.white),
                                       ),
                                       Text(
                                         "Singapore, Golden Mile",
                                         style: TextStyle(
-                                            fontSize: 7, color: Colors.white),
+                                            fontSize: 8, color: Colors.white),
                                       ),
                                       SizedBox(height: 5),
                                       Text(
                                         "About",
                                         style: TextStyle(
-                                            fontSize: 8, color: Colors.white),
+                                            fontSize: 9, color: Colors.white),
                                       ),
                                       Text(
                                         "Text fill  today and enjoy the first month of premium benefits on\n us.Sign up today and enjoy the first month of premium benefits ",
                                         style: TextStyle(
-                                            fontSize: 7, color: Colors.white),
+                                            fontSize: 8, color: Colors.white),
                                       ),
                                       SizedBox(
                                         height: 10,
@@ -109,26 +107,27 @@ class Profile_Picture extends StatelessWidget {
                                           Text(
                                             "Rating",
                                             style: TextStyle(
-                                                fontSize: 10,
+                                                fontSize: 11,
                                                 color: Colors.white),
                                           ),
+                                          SizedBox(width: 5),
                                           Text(
                                             "4.5",
                                             style: TextStyle(
-                                                fontSize: 20,
+                                                fontSize: 21,
                                                 color: Colors.white),
                                           ),
                                           SizedBox(width: 20),
                                           Text(
                                             "Comments",
                                             style: TextStyle(
-                                                fontSize: 10,
+                                                fontSize: 11,
                                                 color: Colors.white),
                                           ),
                                           Text(
                                             "566",
                                             style: TextStyle(
-                                                fontSize: 20,
+                                                fontSize: 21,
                                                 color: Colors.white),
                                           ),
                                         ],
@@ -136,7 +135,7 @@ class Profile_Picture extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 40),
+                                SizedBox(height: 30),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 35),
@@ -152,7 +151,7 @@ class Profile_Picture extends StatelessWidget {
                                               Navigator.of(context).push(
                                                   MaterialPageRoute(builder:
                                                       (BuildContext context) {
-                                                return Edit_Profile();
+                                                return Listed_Items();
                                               }));
                                             },
                                             style: ElevatedButton.styleFrom(
@@ -225,26 +224,17 @@ class Profile_Picture extends StatelessWidget {
                                       ),
                                       Row(
                                         children: [
-                                          InkWell(
-                                            onTap: () {
-                                              Navigator.of(context).push(
-                                                  MaterialPageRoute(builder:
-                                                      (BuildContext context) {
-                                                return Contact_Us();
-                                              }));
-                                            },
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(100),
-                                              ),
-                                              height: 30,
-                                              width: 30,
-                                              child: SvgPicture.asset(
-                                                "assests/Call.svg",
-                                                fit: BoxFit.scaleDown,
-                                              ),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            height: 30,
+                                            width: 30,
+                                            child: SvgPicture.asset(
+                                              "assests/Call.svg",
+                                              fit: BoxFit.scaleDown,
                                             ),
                                           ),
                                           SizedBox(width: 5),
@@ -287,7 +277,7 @@ class Profile_Picture extends StatelessWidget {
                                 Text(
                                   "667 Garden Suite, United States",
                                   style: TextStyle(
-                                      fontSize: 9, color: Colors.white),
+                                      fontSize: 10, color: Colors.white),
                                 ),
                               ],
                             ),
@@ -330,7 +320,7 @@ class Profile_Picture extends StatelessWidget {
                                       Text(
                                         "Art & Humanities",
                                         style: TextStyle(
-                                            fontSize: 9, color: Colors.white),
+                                            fontSize: 10, color: Colors.white),
                                       )
                                     ],
                                   ),
@@ -357,7 +347,7 @@ class Profile_Picture extends StatelessWidget {
                       offset: Offset(1.0, 2.0),
                     )
                   ]),
-              height: 230,
+              height: 240,
               width: MediaQuery.of(context).size.width / 1.1,
               child: Column(
                 children: [
@@ -372,7 +362,7 @@ class Profile_Picture extends StatelessWidget {
                             offset: Offset(1.0, 2.0),
                           )
                         ]),
-                    height: 185,
+                    height: 195,
                     width: MediaQuery.of(context).size.width,
                     child: Column(
                       children: [
@@ -399,7 +389,7 @@ class Profile_Picture extends StatelessWidget {
                                 Text(
                                   "09:00 AM",
                                   style: TextStyle(
-                                      fontSize: 10, color: Color(0xffACACAC)),
+                                      fontSize: 12, color: Color(0xffACACAC)),
                                 ),
                                 SizedBox(
                                   width: 60,
@@ -415,7 +405,7 @@ class Profile_Picture extends StatelessWidget {
                                         child: Text(
                                           "Open Time",
                                           style: TextStyle(
-                                              fontSize: 10,
+                                              fontSize: 11,
                                               color: Color(0xffACACAC)),
                                         ),
                                       ),
@@ -423,7 +413,7 @@ class Profile_Picture extends StatelessWidget {
                                         child: Text(
                                           "Close Time",
                                           style: TextStyle(
-                                              fontSize: 10,
+                                              fontSize: 11,
                                               color: Color(0xffACACAC)),
                                         ),
                                         value: "Close Time",
@@ -437,7 +427,7 @@ class Profile_Picture extends StatelessWidget {
                                 Text(
                                   "18:00 PM",
                                   style: TextStyle(
-                                      fontSize: 10, color: Color(0xffACACAC)),
+                                      fontSize: 11, color: Color(0xffACACAC)),
                                 )
                               ],
                             ),
@@ -452,17 +442,17 @@ class Profile_Picture extends StatelessWidget {
                               Text(
                                 "Monday",
                                 style: TextStyle(
-                                    fontSize: 8, color: Color(0xffACACAC)),
+                                    fontSize: 10, color: Color(0xffACACAC)),
                               ),
                               Container(
                                 height: .05,
-                                width: 200,
+                                width: MediaQuery.of(context).size.width / 2,
                                 color: Color(0xff707070),
                               ),
                               Text(
                                 "09:00 AM - 18:00 PM",
                                 style: TextStyle(
-                                    fontSize: 7, color: Color(0xffFD9F00)),
+                                    fontSize: 9, color: Color(0xffFD9F00)),
                               ),
                             ],
                           ),
@@ -476,17 +466,17 @@ class Profile_Picture extends StatelessWidget {
                               Text(
                                 "Tuesday",
                                 style: TextStyle(
-                                    fontSize: 8, color: Color(0xffACACAC)),
+                                    fontSize: 10, color: Color(0xffACACAC)),
                               ),
                               Container(
                                 height: .05,
-                                width: 200,
+                                width: MediaQuery.of(context).size.width / 2,
                                 color: Color(0xff707070),
                               ),
                               Text(
                                 "09:00 AM - 18:00 PM",
                                 style: TextStyle(
-                                    fontSize: 7, color: Color(0xffFD9F00)),
+                                    fontSize: 9, color: Color(0xffFD9F00)),
                               ),
                             ],
                           ),
@@ -500,17 +490,17 @@ class Profile_Picture extends StatelessWidget {
                               Text(
                                 "Wednesday",
                                 style: TextStyle(
-                                    fontSize: 8, color: Color(0xffACACAC)),
+                                    fontSize: 10, color: Color(0xffACACAC)),
                               ),
                               Container(
                                 height: .05,
-                                width: 200,
+                                width: MediaQuery.of(context).size.width / 2,
                                 color: Color(0xff707070),
                               ),
                               Text(
                                 "09:00 AM - 18:00 PM",
                                 style: TextStyle(
-                                    fontSize: 7, color: Color(0xffFD9F00)),
+                                    fontSize: 9, color: Color(0xffFD9F00)),
                               ),
                             ],
                           ),
@@ -524,17 +514,17 @@ class Profile_Picture extends StatelessWidget {
                               Text(
                                 "Thursday",
                                 style: TextStyle(
-                                    fontSize: 8, color: Color(0xffACACAC)),
+                                    fontSize: 10, color: Color(0xffACACAC)),
                               ),
                               Container(
                                 height: .05,
-                                width: 200,
+                                width: MediaQuery.of(context).size.width / 2,
                                 color: Color(0xff707070),
                               ),
                               Text(
                                 "09:00 AM - 18:00 PM",
                                 style: TextStyle(
-                                    fontSize: 7, color: Color(0xffFD9F00)),
+                                    fontSize: 9, color: Color(0xffFD9F00)),
                               ),
                             ],
                           ),
@@ -548,17 +538,17 @@ class Profile_Picture extends StatelessWidget {
                               Text(
                                 "Friday",
                                 style: TextStyle(
-                                    fontSize: 8, color: Color(0xffACACAC)),
+                                    fontSize: 10, color: Color(0xffACACAC)),
                               ),
                               Container(
                                 height: .05,
-                                width: 200,
+                                width: MediaQuery.of(context).size.width / 2,
                                 color: Color(0xff707070),
                               ),
                               Text(
                                 "09:00 AM - 18:00 PM",
                                 style: TextStyle(
-                                    fontSize: 7, color: Color(0xffFD9F00)),
+                                    fontSize: 9, color: Color(0xffFD9F00)),
                               ),
                             ],
                           ),
@@ -572,17 +562,17 @@ class Profile_Picture extends StatelessWidget {
                               Text(
                                 "Sunday",
                                 style: TextStyle(
-                                    fontSize: 8, color: Color(0xffACACAC)),
+                                    fontSize: 10, color: Color(0xffACACAC)),
                               ),
                               Container(
                                 height: .05,
-                                width: 120,
+                                width: MediaQuery.of(context).size.width / 3.5,
                                 color: Color(0xff707070),
                               ),
                               Text(
                                 "09:00 AM - 18:00 PM",
                                 style: TextStyle(
-                                    fontSize: 7, color: Color(0xffFD9F00)),
+                                    fontSize: 9, color: Color(0xffFD9F00)),
                               ),
                             ],
                           ),
@@ -602,12 +592,12 @@ class Profile_Picture extends StatelessWidget {
                             Text(
                               "Date Established",
                               style: TextStyle(
-                                  fontSize: 6, color: Color(0xffACACAC)),
+                                  fontSize: 8, color: Color(0xffACACAC)),
                             ),
                             Text(
                               "Sep 15, 2023",
                               style:
-                              TextStyle(fontSize: 10, color: Colors.black),
+                                  TextStyle(fontSize: 11, color: Colors.black),
                             ),
                           ],
                         ),
@@ -617,12 +607,12 @@ class Profile_Picture extends StatelessWidget {
                             Text(
                               "Price Range",
                               style: TextStyle(
-                                  fontSize: 6, color: Color(0xffACACAC)),
+                                  fontSize: 8, color: Color(0xffACACAC)),
                             ),
                             Text(
                               "\$46.00 to \$93.00",
                               style:
-                              TextStyle(fontSize: 10, color: Colors.black),
+                                  TextStyle(fontSize: 11, color: Colors.black),
                             ),
                           ],
                         ),
@@ -769,6 +759,7 @@ class Profile_Picture extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 20),
           ],
         ),
       ),

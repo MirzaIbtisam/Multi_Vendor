@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:multi_vendor/Events/Events.dart';
-
+import 'Drawer/Drawer.dart';
 import 'Elements/Event_Categories.dart';
 
 class Explore extends StatelessWidget {
@@ -10,6 +10,13 @@ class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(80),
+                  bottomRight: Radius.circular(80))),
+          width: MediaQuery.of(context).size.width / 1.7,
+          child: DrawerPage()),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -27,110 +34,126 @@ class Explore extends StatelessWidget {
                   SizedBox(height: 40),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Stack(
-                          children: [
-                            Container(
+                    child: Builder(builder: (context) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Stack(
+                            children: [
+                              InkWell(
+                                onTap: () {
+                                  Scaffold.of(context).openDrawer();
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.grey,
+                                            blurRadius: 3,
+                                            offset: Offset(1.0, 2.0))
+                                      ]),
+                                  height: 35,
+                                  width: 35,
+                                  child: SvgPicture.asset(
+                                    "assests/Statistic drawer.svg",
+                                    fit: BoxFit.scaleDown,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 25),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Color(0xffFD9F00),
+                                      borderRadius: BorderRadius.circular(100),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Color(0xffFD9F00),
+                                            blurRadius: 3,
+                                            offset: Offset(1.0, 2.0))
+                                      ]),
+                                  height: 10,
+                                  width: 10,
+                                ),
+                              )
+                            ],
+                          ),
+                          Text(
+                            "Explore",
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(32),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      offset: Offset(1.0, 1.5))
+                                ]),
+                            height: 30,
+                            width: MediaQuery.of(context).size.width / 2.2,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  contentPadding: EdgeInsets.only(bottom: 18),
+                                  prefixIcon: SvgPicture.asset(
+                                    "assests/Group 11712.svg",
+                                    fit: BoxFit.scaleDown,
+                                  ),
+                                  hintText: "Search ",
+                                  hintStyle: TextStyle(
+                                      fontSize: 9, color: Color(0xffC1C1C1))),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                return Events();
+                              }));
+                            },
+                            child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(100),
                                   boxShadow: [
                                     BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 3,
-                                        offset: Offset(1.0, 2.0))
+                                      color: Color(0xffFD9F00),
+                                      blurRadius: 3,
+                                    )
                                   ]),
                               height: 35,
                               width: 35,
                               child: SvgPicture.asset(
-                                "assests/Statistic drawer.svg",
+                                "assests/noun-list-969174.svg",
                                 fit: BoxFit.scaleDown,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 25),
-                              child: Container(
-                                decoration: BoxDecoration(
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage("assests/Profile Pic.jpg")),
+                                boxShadow: [
+                                  BoxShadow(
                                     color: Color(0xffFD9F00),
-                                    borderRadius: BorderRadius.circular(100),
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Color(0xffFD9F00),
-                                          blurRadius: 3,
-                                          offset: Offset(1.0, 2.0))
-                                    ]),
-                                height: 10,
-                                width: 10,
-                              ),
-                            )
-                          ],
-                        ),
-                        Text(
-                          "Explore",
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(32),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    offset: Offset(1.0, 1.5))
-                              ]),
-                          height: 30,
-                          width: MediaQuery.of(context).size.width / 2.2,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                contentPadding: EdgeInsets.only(bottom: 18),
-                                prefixIcon: SvgPicture.asset(
-                                  "assests/Group 11712.svg",
-                                  fit: BoxFit.scaleDown,
-                                ),
-                                hintText: "Search ",
-                                hintStyle: TextStyle(
-                                    fontSize: 9, color: Color(0xffC1C1C1))),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0xffFD9F00),
-                                  blurRadius: 3,
-                                )
-                              ]),
-                          height: 35,
-                          width: 35,
-                          child: SvgPicture.asset(
-                            "assests/noun-list-969174.svg",
-                            fit: BoxFit.scaleDown,
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              image: DecorationImage(
-                                  image: AssetImage("assests/Profile Pic.jpg")),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0xffFD9F00),
-                                  blurRadius: 3,
-                                )
-                              ]),
-                          height: 35,
-                          width: 35,
-                        )
-                      ],
-                    ),
+                                    blurRadius: 3,
+                                  )
+                                ]),
+                            height: 35,
+                            width: 35,
+                          )
+                        ],
+                      );
+                    }),
                   ),
                   SizedBox(height: 10),
                   Padding(
@@ -143,39 +166,30 @@ class Explore extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
-                            child: InkWell(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (BuildContext context) {
-                                  return Events();
-                                }));
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(100),
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.grey,
-                                          blurRadius: 3,
-                                          offset: Offset(1.0, 2.0))
-                                    ]),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SvgPicture.asset("assests/Group 2859.svg"),
-                                    Text(
-                                      "Events",
-                                      style: TextStyle(
-                                          fontSize: 7,
-                                          color: Color(0xffFDCD7D)),
-                                    ),
-                                  ],
-                                ),
+                            padding: const EdgeInsets.all(4),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(100),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey,
+                                        blurRadius: 3,
+                                        offset: Offset(1.0, 2.0))
+                                  ]),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SvgPicture.asset("assests/Group 2859.svg"),
+                                  Text(
+                                    "Events",
+                                    style: TextStyle(
+                                        fontSize: 7, color: Color(0xffFDCD7D)),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -185,10 +199,10 @@ class Explore extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -218,10 +232,10 @@ class Explore extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -251,10 +265,10 @@ class Explore extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -284,10 +298,10 @@ class Explore extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -317,10 +331,10 @@ class Explore extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,

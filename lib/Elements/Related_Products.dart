@@ -59,13 +59,13 @@ class _Related_ProductsState extends State<Related_Products> {
                 Text(
                   widget.txt1,
                   style: TextStyle(
-                      fontSize: 11,
+                      fontSize: 12,
                       color: Color(0xff585D5E),
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   widget.txt2,
-                  style: TextStyle(fontSize: 7, color: Color(0xffACACAC)),
+                  style: TextStyle(fontSize: 8, color: Color(0xffACACAC)),
                 ),
                 SizedBox(height: 5),
                 Container(

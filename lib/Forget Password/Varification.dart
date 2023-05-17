@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:multi_vendor/Forget%20Password/Password.dart';
+import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/style.dart';
+
 
 class Varification extends StatelessWidget {
   const Varification({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -69,96 +73,26 @@ class Varification extends StatelessWidget {
               ],
             ),
             SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(32),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 3,
-                        )
-                      ]),
-                  height: 100,
-                  width: 60,
-                  child: Center(
-                      child: TextFormField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                    ),
-                  )),
-                ),
-                SizedBox(width: 8),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(32),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 3,
-                        )
-                      ]),
-                  height: 100,
-                  width: 60,
-                  child: Center(
-                      child: TextFormField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                    ),
-                  )),
-                ),
-                SizedBox(width: 8),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(32),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 3,
-                        )
-                      ]),
-                  height: 100,
-                  width: 60,
-                  child: Center(
-                      child: TextFormField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                    ),
-                  )),
-                ),
-                SizedBox(width: 8),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(32),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 3,
-                        )
-                      ]),
-                  height: 100,
-                  width: 60,
-                  child: Center(
-                      child: TextFormField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                    ),
-                  )),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: OTPTextField(
+                length: 4,
+                width: MediaQuery.of(context).size.width,
+                fieldWidth: 50,
+                style: TextStyle(fontSize: 17),
+                textFieldAlignment: MainAxisAlignment.spaceAround,
+                fieldStyle: FieldStyle.underline,
+                onCompleted: (pin) {
+                  print("Completed: " + pin);
+                },
+              ),
             ),
             SizedBox(height: 30),
             SizedBox(
               width: 150,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (BuildContext context) {
                       return Password();
                     }));
@@ -178,11 +112,11 @@ class Varification extends StatelessWidget {
               children: [
                 Text(
                   "Didn't receive code?",
-                  style: TextStyle(fontSize: 10, color: Color(0xffACACAC)),
+                  style: TextStyle(fontSize: 12, color: Color(0xffACACAC)),
                 ),
                 Text(
                   "Try Again",
-                  style: TextStyle(fontSize: 10, color: Color(0xffFD9F00)),
+                  style: TextStyle(fontSize: 12, color: Color(0xffFD9F00)),
                 ),
               ],
             )

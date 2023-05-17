@@ -123,11 +123,11 @@ class Edit_Profile extends StatelessWidget {
                         ),
                         Text(
                           "Singapore, Golden Mile",
-                          style: TextStyle(fontSize: 7, color: Colors.white),
+                          style: TextStyle(fontSize: 8, color: Colors.white),
                         ),
                         Text(
                           "@steve,garrett",
-                          style: TextStyle(fontSize: 7, color: Colors.white),
+                          style: TextStyle(fontSize: 8, color: Colors.white),
                         ),
                         SizedBox(height: 10),
                         Container(
@@ -167,7 +167,7 @@ class Edit_Profile extends StatelessWidget {
                                     Text(
                                       "Feedback",
                                       style: TextStyle(
-                                          fontSize: 10,
+                                          fontSize: 11,
                                           color: Color(0xff585D5E)),
                                     ),
                                     Text(
@@ -185,7 +185,7 @@ class Edit_Profile extends StatelessWidget {
                                   Text(
                                     "Post",
                                     style: TextStyle(
-                                        fontSize: 10, color: Color(0xff585D5E)),
+                                        fontSize: 11, color: Color(0xff585D5E)),
                                   ),
                                   Text("245",
                                       style: TextStyle(
@@ -249,7 +249,7 @@ class Edit_Profile extends StatelessWidget {
                                   contentPadding: EdgeInsets.only(top: 20),
                                   hintText: "Name",
                                   hintStyle: TextStyle(
-                                      fontSize: 11, color: Colors.black)),
+                                      fontSize: 12, color: Colors.black)),
                             ),
                           ),
                         )
@@ -272,7 +272,7 @@ class Edit_Profile extends StatelessWidget {
                                   contentPadding: EdgeInsets.only(top: 20),
                                   hintText: "Works at",
                                   hintStyle: TextStyle(
-                                      fontSize: 11, color: Colors.black)),
+                                      fontSize: 12, color: Colors.black)),
                             ),
                           ),
                         )
@@ -295,7 +295,7 @@ class Edit_Profile extends StatelessWidget {
                                   contentPadding: EdgeInsets.only(top: 20),
                                   hintText: "Address",
                                   hintStyle: TextStyle(
-                                      fontSize: 11, color: Colors.black)),
+                                      fontSize: 12, color: Colors.black)),
                             ),
                           ),
                         )
@@ -318,7 +318,7 @@ class Edit_Profile extends StatelessWidget {
                                   contentPadding: EdgeInsets.only(top: 20),
                                   hintText: "Email",
                                   hintStyle: TextStyle(
-                                      fontSize: 11, color: Colors.black)),
+                                      fontSize: 12, color: Colors.black)),
                             ),
                           ),
                         )
@@ -341,7 +341,7 @@ class Edit_Profile extends StatelessWidget {
                                   contentPadding: EdgeInsets.only(top: 20),
                                   hintText: "Website",
                                   hintStyle: TextStyle(
-                                      fontSize: 11, color: Colors.black)),
+                                      fontSize: 12, color: Colors.black)),
                             ),
                           ),
                         )
@@ -355,7 +355,7 @@ class Edit_Profile extends StatelessWidget {
                       alignment: Alignment.topLeft,
                       child: Text(
                         "Information",
-                        style: TextStyle(fontSize: 11, color: Colors.black),
+                        style: TextStyle(fontSize: 12, color: Colors.black),
                       ),
                     ),
                   ),
@@ -377,9 +377,10 @@ class Edit_Profile extends StatelessWidget {
                     height: 100,
                     width: MediaQuery.of(context).size.width / 1.3,
                     child: TextFormField(
+                      maxLines: 3,
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.only(left: 10),
+                        contentPadding: EdgeInsets.only(left: 10,right: 10,top: 5),
                       ),
                     ),
                   ),

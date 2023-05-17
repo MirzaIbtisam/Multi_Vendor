@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:multi_vendor/Listed%20Items/Listed_Items.dart';
 
 class Events extends StatelessWidget {
   const Events({Key? key}) : super(key: key);
@@ -23,115 +24,108 @@ class Events extends StatelessWidget {
                 children: [
                   SizedBox(height: 40),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Stack(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(100),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 3,
-                                        offset: Offset(1.0, 2.0))
-                                  ]),
-                              height: 35,
-                              width: 35,
-                              child: SvgPicture.asset(
-                                "assests/Statistic drawer.svg",
-                                fit: BoxFit.scaleDown,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 25),
-                              child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Stack(
+                            children: [
+                              Container(
                                 decoration: BoxDecoration(
-                                    color: Color(0xffFD9F00),
+                                    color: Colors.white,
                                     borderRadius: BorderRadius.circular(100),
                                     boxShadow: [
                                       BoxShadow(
-                                          color: Color(0xffFD9F00),
+                                          color: Colors.grey,
                                           blurRadius: 3,
                                           offset: Offset(1.0, 2.0))
                                     ]),
-                                height: 10,
-                                width: 10,
-                              ),
-                            )
-                          ],
-                        ),
-                        Text(
-                          "Explore",
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(32),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    offset: Offset(1.0, 1.5))
-                              ]),
-                          height: 30,
-                          width: MediaQuery.of(context).size.width / 2.2,
-                          child: TextFormField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                contentPadding: EdgeInsets.only(bottom: 18),
-                                prefixIcon: SvgPicture.asset(
-                                  "assests/Group 11712.svg",
+                                height: 35,
+                                width: 35,
+                                child: SvgPicture.asset(
+                                  "assests/Statistic drawer.svg",
                                   fit: BoxFit.scaleDown,
                                 ),
-                                hintText: "Search ",
-                                hintStyle: TextStyle(
-                                    fontSize: 9, color: Color(0xffC1C1C1))),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 25),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Color(0xffFD9F00),
+                                      borderRadius: BorderRadius.circular(100),
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Color(0xffFD9F00),
+                                            blurRadius: 3,
+                                            offset: Offset(1.0, 2.0))
+                                      ]),
+                                  height: 10,
+                                  width: 10,
+                                ),
+                              )
+                            ],
                           ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Color(0xffFD9F00),
-                              borderRadius: BorderRadius.circular(100),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0xffFD9F00),
-                                  blurRadius: 3,
-                                )
-                              ]),
-                          height: 35,
-                          width: 35,
-                          child: SvgPicture.asset(
-                            "assests/white dots.svg",
-                            fit: BoxFit.scaleDown,
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(32),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      offset: Offset(1.0, 1.5))
+                                ]),
+                            height: 30,
+                            width: MediaQuery.of(context).size.width / 1.9,
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  contentPadding: EdgeInsets.only(bottom: 18),
+                                  prefixIcon: SvgPicture.asset(
+                                    "assests/Group 11712.svg",
+                                    fit: BoxFit.scaleDown,
+                                  ),
+                                  hintText: "Search ",
+                                  hintStyle: TextStyle(
+                                      fontSize: 9, color: Color(0xffC1C1C1))),
+                            ),
                           ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(100),
-                              image: DecorationImage(
-                                  image: AssetImage("assests/Profile Pic.jpg")),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Color(0xffFD9F00),
-                                  blurRadius: 3,
-                                )
-                              ]),
-                          height: 35,
-                          width: 35,
-                        )
-                      ],
-                    ),
-                  ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Color(0xffFD9F00),
+                                borderRadius: BorderRadius.circular(100),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0xffFD9F00),
+                                    blurRadius: 3,
+                                  )
+                                ]),
+                            height: 35,
+                            width: 35,
+                            child: SvgPicture.asset(
+                              "assests/white dots.svg",
+                              fit: BoxFit.scaleDown,
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(100),
+                                image: DecorationImage(
+                                    image:
+                                        AssetImage("assests/Profile Pic.jpg")),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Color(0xffFD9F00),
+                                    blurRadius: 3,
+                                  )
+                                ]),
+                            height: 35,
+                            width: 35,
+                          )
+                        ],
+                      )),
                   SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -145,10 +139,10 @@ class Events extends StatelessWidget {
                                   blurRadius: 3,
                                 )
                               ]),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -167,10 +161,10 @@ class Events extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -200,10 +194,10 @@ class Events extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -233,10 +227,10 @@ class Events extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -266,10 +260,10 @@ class Events extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -299,10 +293,10 @@ class Events extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(100),
                           ),
-                          height: 50,
-                          width: 50,
+                          height: 52,
+                          width: 52,
                           child: Padding(
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(4),
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.white,
@@ -364,7 +358,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -402,17 +396,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -433,7 +435,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -471,17 +473,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -502,7 +512,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -540,17 +550,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -571,7 +589,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -609,17 +627,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -640,7 +666,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -678,17 +704,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -709,7 +743,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -747,17 +781,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -778,7 +820,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -816,17 +858,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),
@@ -847,7 +897,7 @@ class Events extends StatelessWidget {
                     )
                   ]),
               height: 130,
-              width: MediaQuery.of(context).size.width / 1.1,
+              width: MediaQuery.of(context).size.width / 1.05,
               child: Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Row(
@@ -885,17 +935,25 @@ class Events extends StatelessWidget {
                         )
                       ],
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xff4CC171),
-                        borderRadius: BorderRadius.circular(32),
-                      ),
-                      height: 130,
-                      width: MediaQuery.of(context).size.width / 5.5,
-                      child: Center(
-                        child: Text(
-                          "Book Now",
-                          style: TextStyle(fontSize: 9, color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return Listed_Items();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Color(0xff4CC171),
+                          borderRadius: BorderRadius.circular(32),
+                        ),
+                        height: 130,
+                        width: MediaQuery.of(context).size.width / 5.5,
+                        child: Center(
+                          child: Text(
+                            "Book Now",
+                            style: TextStyle(fontSize: 9, color: Colors.white),
+                          ),
                         ),
                       ),
                     ),

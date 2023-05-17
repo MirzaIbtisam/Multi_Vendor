@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:multi_vendor/Events/Events.dart';
 
 class Map_2 extends StatelessWidget {
   const Map_2({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class Map_2 extends StatelessWidget {
       body: Stack(
         children: [
           Center(child: SvgPicture.asset("assests/Group 11729.svg")),
-          SvgPicture.asset("assests/4409044.svg"),
+          SvgPicture.asset("assests/4409044.svg",fit: BoxFit.cover,),
           Column(
             children: [
               Container(
@@ -19,7 +20,7 @@ class Map_2 extends StatelessWidget {
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(32),
                         bottomRight: Radius.circular(32))),
-                height: 115,
+                height: 105,
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
@@ -66,27 +67,46 @@ class Map_2 extends StatelessWidget {
                               )
                             ],
                           ),
-                          Text(
-                            "Brazilian community",
-                            style: TextStyle(fontSize: 10, color: Colors.black),
+                          Column(
+                            children: [
+                              Text(
+                                "Brazilian community",
+                                style: TextStyle(
+                                    fontSize: 12, color: Colors.black),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "Events Near You",
+                                style: TextStyle(
+                                    fontSize: 11, color: Color(0xff585D5E)),
+                              )
+                            ],
                           ),
                           Row(
                             children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(100),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Color(0xffFD9F00),
-                                        blurRadius: 3,
-                                      )
-                                    ]),
-                                height: 35,
-                                width: 35,
-                                child: SvgPicture.asset(
-                                  "assests/noun-list-969174.svg",
-                                  fit: BoxFit.scaleDown,
+                              InkWell(
+                                onTap: () {
+                                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                                      builder: (BuildContext context) {
+                                    return Events();
+                                  }));
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color(0xffFD9F00),
+                                          blurRadius: 3,
+                                        )
+                                      ]),
+                                  height: 35,
+                                  width: 35,
+                                  child: SvgPicture.asset(
+                                    "assests/noun-list-969174.svg",
+                                    fit: BoxFit.scaleDown,
+                                  ),
                                 ),
                               ),
                               SizedBox(width: 8),
@@ -110,11 +130,6 @@ class Map_2 extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Events Near You",
-                      style: TextStyle(fontSize: 12, color: Color(0xff585D5E)),
-                    )
                   ],
                 ),
               ),
@@ -165,10 +180,10 @@ class Map_2 extends StatelessWidget {
                                               blurRadius: 3,
                                             )
                                           ]),
-                                      height: 50,
-                                      width: 50,
+                                      height: 52,
+                                      width: 52,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(5),
+                                        padding: const EdgeInsets.all(4),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -191,10 +206,10 @@ class Map_2 extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                       ),
-                                      height: 50,
-                                      width: 50,
+                                      height: 52,
+                                      width: 52,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(5),
+                                        padding: const EdgeInsets.all(4),
                                         child: Container(
                                           decoration: BoxDecoration(
                                               color: Colors.white,
@@ -229,10 +244,10 @@ class Map_2 extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                       ),
-                                      height: 50,
-                                      width: 50,
+                                      height: 52,
+                                      width: 52,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(5),
+                                        padding: const EdgeInsets.all(4),
                                         child: Container(
                                           decoration: BoxDecoration(
                                               color: Colors.white,
@@ -267,10 +282,10 @@ class Map_2 extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                       ),
-                                      height: 50,
-                                      width: 50,
+                                      height: 52,
+                                      width: 52,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(5),
+                                        padding: const EdgeInsets.all(4),
                                         child: Container(
                                           decoration: BoxDecoration(
                                               color: Colors.white,
@@ -305,10 +320,10 @@ class Map_2 extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                       ),
-                                      height: 50,
-                                      width: 50,
+                                      height: 52,
+                                      width: 52,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(5),
+                                        padding: const EdgeInsets.all(4),
                                         child: Container(
                                           decoration: BoxDecoration(
                                               color: Colors.white,
@@ -343,10 +358,10 @@ class Map_2 extends StatelessWidget {
                                         borderRadius:
                                             BorderRadius.circular(100),
                                       ),
-                                      height: 50,
-                                      width: 50,
+                                      height: 52,
+                                      width: 52,
                                       child: Padding(
-                                        padding: const EdgeInsets.all(5),
+                                        padding: const EdgeInsets.all(4),
                                         child: Container(
                                           decoration: BoxDecoration(
                                               color: Colors.white,
@@ -405,7 +420,7 @@ class Map_2 extends StatelessWidget {
                               ),
                               hintText: "Explore upcoming events",
                               hintStyle: TextStyle(
-                                  fontSize: 10, color: Color(0xffC1C1C1)),
+                                  fontSize: 12, color: Color(0xffC1C1C1)),
                               suffixIcon: SvgPicture.asset(
                                 "assests/Explore upcoming events.svg",
                                 fit: BoxFit.scaleDown,
@@ -422,47 +437,13 @@ class Map_2 extends StatelessWidget {
           )
         ],
       ),
-      floatingActionButton: Column(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(100),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 2,
-                  )
-                ]),
-            height: 25,
-            width: 25,
-            child: SvgPicture.asset(
-              "assests/Group 2916.svg",
-              fit: BoxFit.scaleDown,
-            ),
-          ),
-          SizedBox(height: 8),
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(100),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 2,
-                  )
-                ]),
-            height: 30,
-            width: 30,
-            child: SvgPicture.asset(
-              "assests/Group 2878.svg",
-              fit: BoxFit.scaleDown,
-            ),
-          ),
-          SizedBox(height: 8),
-          Container(
+      floatingActionButton: Transform.translate(
+        offset: Offset(0, 550),
+        child: Column(
+          children: [
+            Container(
               decoration: BoxDecoration(
-                  color: Color(0xff4CC171),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(100),
                   boxShadow: [
                     BoxShadow(
@@ -470,16 +451,53 @@ class Map_2 extends StatelessWidget {
                       blurRadius: 2,
                     )
                   ]),
-              height: 35,
-              width: 35,
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Events\nNear Me",
-                  style: TextStyle(fontSize: 6, color: Colors.white),
-                ),
-              )),
-        ],
+              height: 25,
+              width: 25,
+              child: SvgPicture.asset(
+                "assests/Group 2916.svg",
+                fit: BoxFit.scaleDown,
+              ),
+            ),
+            SizedBox(height: 8),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(100),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 2,
+                    )
+                  ]),
+              height: 30,
+              width: 30,
+              child: SvgPicture.asset(
+                "assests/Group 2878.svg",
+                fit: BoxFit.scaleDown,
+              ),
+            ),
+            SizedBox(height: 8),
+            Container(
+                decoration: BoxDecoration(
+                    color: Color(0xff4CC171),
+                    borderRadius: BorderRadius.circular(100),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 2,
+                      )
+                    ]),
+                height: 35,
+                width: 35,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "  Events\nNear Me",
+                    style: TextStyle(fontSize: 6, color: Colors.white),
+                  ),
+                )),
+          ],
+        ),
       ),
     );
   }

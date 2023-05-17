@@ -1,10 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:multi_vendor/Message/Message.dart';
 import 'package:multi_vendor/Sign%20In/Sign_In.dart';
+import 'package:intl/intl.dart';
 
-class Sign_Up extends StatelessWidget {
+class Sign_Up extends StatefulWidget {
   Sign_Up({Key? key}) : super(key: key);
+
+  @override
+  State<Sign_Up> createState() => _Sign_UpState();
+}
+
+class _Sign_UpState extends State<Sign_Up> {
+  DateTime _selectedDate = DateTime.now();
+  String dob = 'Date of Birth';
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+        dob = DateFormat('yyyy-MM-dd').format(_selectedDate);
+        setState(() {});
+      });
+    }
+  }
 
   double size = 11;
 
@@ -25,7 +50,7 @@ class Sign_Up extends StatelessWidget {
               SizedBox(height: 30),
               Text(
                 "Sign Up",
-                style: TextStyle(fontSize: 19, color: Colors.black),
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ),
               SizedBox(height: 10),
               Padding(
@@ -37,35 +62,36 @@ class Sign_Up extends StatelessWidget {
                           contentPadding: EdgeInsets.only(top: 20),
                           hintText: "First name",
                           hintStyle:
-                              TextStyle(fontSize: 11, color: Colors.black)),
+                              TextStyle(fontSize: 12, color: Colors.black)),
                     ),
                     TextFormField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(top: 20),
                           hintText: "Last name",
                           hintStyle:
-                              TextStyle(fontSize: 11, color: Colors.black)),
+                              TextStyle(fontSize: 12, color: Colors.black)),
                     ),
                     TextFormField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(top: 20),
                           hintText: "Email",
                           hintStyle:
-                              TextStyle(fontSize: 11, color: Colors.black)),
+                              TextStyle(fontSize: 12, color: Colors.black)),
                     ),
                     TextFormField(
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(top: 20),
                           hintText: "Password",
                           hintStyle:
-                              TextStyle(fontSize: 11, color: Colors.black)),
+                              TextStyle(fontSize: 12, color: Colors.black)),
                     ),
                     TextFormField(
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.only(top: 20),
                           hintText: "Phone number",
                           hintStyle:
-                              TextStyle(fontSize: 11, color: Colors.black)),
+                              TextStyle(fontSize: 12, color: Colors.black)),
                     ),
                     SizedBox(
                       height: 10,
@@ -75,7 +101,7 @@ class Sign_Up extends StatelessWidget {
                       children: [
                         SizedBox(
                           height: 40,
-                          width: 80,
+                          width: 120,
                           child: DropdownButtonFormField(
                             icon:
                                 SvgPicture.asset("assests/Drop down arrow.svg"),
@@ -136,55 +162,19 @@ class Sign_Up extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                            "Date of Birth",
-                            style: TextStyle(fontSize: 16, color: Colors.grey),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: SizedBox(
-                            height: 35,
-                            width: 30,
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                hintText: "MM",
-                                hintStyle: TextStyle(
-                                    fontSize: 10, color: Color(0xffC0BDBD)),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: SizedBox(
-                            height: 35,
-                            width: 25,
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                hintText: "DD",
-                                hintStyle: TextStyle(
-                                    fontSize: 10, color: Color(0xffC0BDBD)),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: SizedBox(
-                            height: 35,
-                            width: 30,
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                hintText: "YYY",
-                                hintStyle: TextStyle(
-                                    fontSize: 10, color: Color(0xffC0BDBD)),
-                              ),
-                            ),
-                          ),
-                        ),
+                        Expanded(
+                            child: ElevatedButton(
+                                onPressed: () => _selectDate(context),
+                                style: ElevatedButton.styleFrom(
+                                    primary: Color(0xffFFFFFF),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(32))),
+                                child: Text(
+                                  "${dob}",
+                                  style: TextStyle(
+                                      fontSize: 12, color: Color(0xff4CC171)),
+                                ))),
                       ],
                     ),
                   ],
@@ -195,12 +185,7 @@ class Sign_Up extends StatelessWidget {
                 width: 130,
                 height: 30,
                 child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (BuildContext context) {
-                        return Message();
-                      }));
-                    },
+                    onPressed: () {},
                     style: ElevatedButton.styleFrom(
                         primary: Color(0xff4CC171),
                         shape: RoundedRectangleBorder(
@@ -216,7 +201,7 @@ class Sign_Up extends StatelessWidget {
                 children: [
                   Text(
                     "Don't have an Account?",
-                    style: TextStyle(fontSize: 10, color: Colors.black),
+                    style: TextStyle(fontSize: 11, color: Colors.black),
                   ),
                   InkWell(
                     onTap: () {
@@ -227,7 +212,7 @@ class Sign_Up extends StatelessWidget {
                     },
                     child: Text(
                       " Sign In",
-                      style: TextStyle(fontSize: 12, color: Color(0xff585D5E)),
+                      style: TextStyle(fontSize: 13, color: Color(0xff585D5E)),
                     ),
                   ),
                 ],

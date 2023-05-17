@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:multi_vendor/Elements/Related_Products.dart';
+import 'package:multi_vendor/Payment%20Details/Payment_Method.dart';
+import 'package:multi_vendor/Search%20History/Discover_More.dart';
 
 import '../Elements/featured_list _view.dart';
 
@@ -48,7 +49,7 @@ class Listed_Items extends StatelessWidget {
                       Text(
                         "Listed Items",
                         style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: Color(0xff585D5E)),
                       )
@@ -57,7 +58,12 @@ class Listed_Items extends StatelessWidget {
                   Row(
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return Discover_More();
+                          }));
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -114,7 +120,7 @@ class Listed_Items extends StatelessWidget {
                       Text(
                         "Adidas Runner's",
                         style:
-                            TextStyle(fontSize: 18, color: Color(0xff4CC171)),
+                            TextStyle(fontSize: 19, color: Color(0xff4CC171)),
                       ),
                       SizedBox(height: 5),
                       Text(
@@ -132,7 +138,7 @@ class Listed_Items extends StatelessWidget {
                                 Text(
                                   "Price",
                                   style: TextStyle(
-                                      fontSize: 8, color: Color(0xffC1C1C1)),
+                                      fontSize: 10, color: Color(0xffC1C1C1)),
                                 ),
                                 Text(
                                   "150\$",
@@ -171,10 +177,11 @@ class Listed_Items extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10),
                       child: TextFormField(
                         decoration: InputDecoration(
+                          contentPadding: EdgeInsets.only(bottom: 17),
                           border: InputBorder.none,
                           hintText: "Address",
                           hintStyle:
-                              TextStyle(fontSize: 9, color: Color(0xffACACAC)),
+                              TextStyle(fontSize: 10, color: Color(0xffACACAC)),
                         ),
                       ),
                     ),
@@ -183,7 +190,12 @@ class Listed_Items extends StatelessWidget {
                     width: 160,
                     height: 25,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (BuildContext context) {
+                            return Payment_Method();
+                          }));
+                        },
                         style: ElevatedButton.styleFrom(
                             primary: Color(0xff4CC171),
                             shape: RoundedRectangleBorder(
@@ -284,7 +296,7 @@ class Listed_Items extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: SizedBox(
                 height: 170,
                 child: GridView(
@@ -293,8 +305,8 @@ class Listed_Items extends StatelessWidget {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       childAspectRatio: 2,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 8,
+                      crossAxisSpacing: 12,
+                      mainAxisSpacing: 10,
                       mainAxisExtent: 160), //
                   children: [
                     Related_Products(

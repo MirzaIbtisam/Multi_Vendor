@@ -1,8 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
+import 'package:multi_vendor/Message/Alert.dart';
 
-class Add_New_List extends StatelessWidget {
+class Add_New_List extends StatefulWidget {
   Add_New_List({Key? key}) : super(key: key);
+
+  @override
+  State<Add_New_List> createState() => _Add_New_ListState();
+}
+
+class _Add_New_ListState extends State<Add_New_List> {
+  DateTime _selectedDate = DateTime.now();
+  String dob = 'Date of Birth';
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+        dob = DateFormat('yyyy-MM-dd').format(_selectedDate);
+        setState(() {});
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,22 +76,31 @@ class Add_New_List extends StatelessWidget {
                   ]),
                   Row(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(100),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey,
-                                blurRadius: 3,
-                                offset: Offset(1.0, 2.0),
-                              )
-                            ]),
-                        height: 30,
-                        width: 30,
-                        child: SvgPicture.asset(
-                          "assests/Notifications.svg",
-                          fit: BoxFit.scaleDown,
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                            return Alert();
+                          }));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(100),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 3,
+                                  offset: Offset(1.0, 2.0),
+                                )
+                              ]),
+                          height: 30,
+                          width: 30,
+                          child: SvgPicture.asset(
+                            "assests/Notifications.svg",
+                            fit: BoxFit.scaleDown,
+                          ),
                         ),
                       ),
                       SizedBox(width: 8),
@@ -115,7 +151,7 @@ class Add_New_List extends StatelessWidget {
                               "assests/upload-outbox-line-icon.svg"),
                           Text(
                             "Upload feature here",
-                            style: TextStyle(fontSize: 8, color: Colors.white),
+                            style: TextStyle(fontSize: 11, color: Colors.white),
                           )
                         ],
                       ),
@@ -214,7 +250,7 @@ class Add_New_List extends StatelessWidget {
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.only(top: 25),
                   hintText: "Title",
-                  hintStyle: TextStyle(fontSize: 11, color: Colors.black),
+                  hintStyle: TextStyle(fontSize: 13, color: Colors.black),
                 ),
               ),
             ),
@@ -226,7 +262,7 @@ class Add_New_List extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: Text(
                   "Content",
-                  style: TextStyle(fontSize: 11, color: Colors.black),
+                  style: TextStyle(fontSize: 13, color: Colors.black),
                 ),
               ),
             ),
@@ -239,9 +275,11 @@ class Add_New_List extends StatelessWidget {
               height: 110,
               width: MediaQuery.of(context).size.width / 1.1,
               child: TextFormField(
+                maxLines: 5,
                 decoration: InputDecoration(
                     border: InputBorder.none,
-                    contentPadding: EdgeInsets.only(left: 10)),
+                    contentPadding:
+                        EdgeInsets.only(left: 10, right: 10, top: 5)),
               ),
             ),
             SizedBox(height: 10),
@@ -262,34 +300,34 @@ class Add_New_List extends StatelessWidget {
                           value: "Choose Categories",
                           child: Text(
                             "Choose Categories",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 1",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 1",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 2",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 2",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 3",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 3",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 4",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 4",
                         ),
@@ -310,34 +348,34 @@ class Add_New_List extends StatelessWidget {
                           value: "Choose Facilities",
                           child: Text(
                             "Choose Facilities",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Facilities 1",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Facilities 1",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Facilities 2",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Facilities 2",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Facilities 3",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Facilities 3",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Facilities 4",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Facilities 4",
                         ),
@@ -368,34 +406,34 @@ class Add_New_List extends StatelessWidget {
                           value: "Country ",
                           child: Text(
                             "Country ",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Country  1",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Country  1",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Country  2",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Country  2",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Country  3",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Country  3",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Country  4",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Country  4",
                         ),
@@ -416,34 +454,34 @@ class Add_New_List extends StatelessWidget {
                           value: "Choose State",
                           child: Text(
                             "Choose State",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose State 1",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose State 1",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose State 2",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose State 2",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose State 3",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose State 3",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose State 4",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose State 4",
                         ),
@@ -464,34 +502,34 @@ class Add_New_List extends StatelessWidget {
                           value: "Choose City",
                           child: Text(
                             "Choose City",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose City 1",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose City 1",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose City 2",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose City 2",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose City 3",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose City 3",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose City 4",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose City 4",
                         ),
@@ -533,34 +571,34 @@ class Add_New_List extends StatelessWidget {
                           value: "Choose Categories",
                           child: Text(
                             "Choose Categories",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 1",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 1",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 2",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 2",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 3",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 3",
                         ),
                         DropdownMenuItem(
                           child: Text(
                             "Choose Categories 4",
-                            style: TextStyle(fontSize: 11, color: Colors.black),
+                            style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           value: "Choose Categories 4",
                         ),
@@ -579,42 +617,42 @@ class Add_New_List extends StatelessWidget {
                               contentPadding: EdgeInsets.only(top: 15),
                               hintText: "Input your address",
                               hintStyle:
-                                  TextStyle(fontSize: 11, color: Colors.black)),
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                         ),
                         TextFormField(
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(top: 15),
                               hintText: "Zipcode",
                               hintStyle:
-                                  TextStyle(fontSize: 11, color: Colors.black)),
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                         ),
                         TextFormField(
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(top: 15),
                               hintText: "Phone",
                               hintStyle:
-                                  TextStyle(fontSize: 11, color: Colors.black)),
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                         ),
                         TextFormField(
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(top: 15),
                               hintText: "Fax",
                               hintStyle:
-                                  TextStyle(fontSize: 11, color: Colors.black)),
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                         ),
                         TextFormField(
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(top: 15),
                               hintText: "Email",
                               hintStyle:
-                                  TextStyle(fontSize: 11, color: Colors.black)),
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                         ),
                         TextFormField(
                           decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(top: 15),
                               hintText: "Website",
                               hintStyle:
-                                  TextStyle(fontSize: 11, color: Colors.black)),
+                                  TextStyle(fontSize: 12, color: Colors.black)),
                         ),
                       ],
                     ),
@@ -635,7 +673,7 @@ class Add_New_List extends StatelessWidget {
                         blurRadius: 2,
                         offset: Offset(1.0, 2.0))
                   ]),
-              height: 200,
+              height: 250,
               width: MediaQuery.of(context).size.width / 1.1,
               child: Column(
                 children: [
@@ -648,14 +686,14 @@ class Add_New_List extends StatelessWidget {
                         Text(
                           "Color",
                           style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 13,
                               color: Color(0xff585D5E),
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "Icon",
                           style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 13,
                               color: Color(0xff585D5E),
                               fontWeight: FontWeight.bold),
                         ),
@@ -678,7 +716,7 @@ class Add_New_List extends StatelessWidget {
                                     blurRadius: 2,
                                     offset: Offset(1.0, 2.0))
                               ]),
-                          height: 30,
+                          height: 40,
                           width: MediaQuery.of(context).size.width / 2.5,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -701,7 +739,7 @@ class Add_New_List extends StatelessWidget {
                                 Text(
                                   "Choose Color",
                                   style: TextStyle(
-                                      fontSize: 11, color: Colors.black),
+                                      fontSize: 12, color: Colors.black),
                                 )
                               ],
                             ),
@@ -717,56 +755,62 @@ class Add_New_List extends StatelessWidget {
                                     blurRadius: 2,
                                     offset: Offset(1.0, 2.0))
                               ]),
-                          height: 30,
+                          height: 40,
                           width: MediaQuery.of(context).size.width / 2.5,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 15),
                             child: DropdownButtonFormField(
-                              decoration:
-                                  InputDecoration(border: InputBorder.none),
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                              ),
                               icon: SvgPicture.asset(
                                   "assests/caret-down-icon.svg"),
-                              value: "Choose Categories",
+                              value: "C",
                               items: [
                                 DropdownMenuItem(
-                                  value: "Choose Categories",
+                                  alignment: AlignmentDirectional.center,
+                                  value: "C",
                                   child: Text(
-                                    "Choose Categories",
+                                    "C",
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.black),
                                   ),
                                 ),
                                 DropdownMenuItem(
+                                  alignment: AlignmentDirectional.center,
                                   child: Text(
-                                    "Choose Categories 1",
+                                    "C 1",
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.black),
                                   ),
-                                  value: "Choose Categories 1",
+                                  value: "C 1",
                                 ),
                                 DropdownMenuItem(
+                                  alignment: AlignmentDirectional.center,
                                   child: Text(
-                                    "Choose Categories 2",
+                                    "C 2",
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.black),
                                   ),
-                                  value: "Choose Categories 2",
+                                  value: "C 2",
                                 ),
                                 DropdownMenuItem(
+                                  alignment: AlignmentDirectional.center,
                                   child: Text(
-                                    "Choose Categories 3",
+                                    "C 3",
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.black),
                                   ),
-                                  value: "Choose Categories 3",
+                                  value: "C 3",
                                 ),
                                 DropdownMenuItem(
+                                  alignment: AlignmentDirectional.center,
                                   child: Text(
-                                    "Choose Categories 4",
+                                    "C 4",
                                     style: TextStyle(
                                         fontSize: 11, color: Colors.black),
                                   ),
-                                  value: "Choose Categories 4",
+                                  value: "C 4",
                                 ),
                               ],
                               onChanged: (value) {
@@ -787,14 +831,14 @@ class Add_New_List extends StatelessWidget {
                         Text(
                           "Color",
                           style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 13,
                               color: Color(0xff585D5E),
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "Date",
                           style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 13,
                               color: Color(0xff585D5E),
                               fontWeight: FontWeight.bold),
                         ),
@@ -817,7 +861,7 @@ class Add_New_List extends StatelessWidget {
                                     blurRadius: 2,
                                     offset: Offset(1.0, 2.0))
                               ]),
-                          height: 30,
+                          height: 40,
                           width: MediaQuery.of(context).size.width / 2.5,
                           child: Padding(
                             padding: const EdgeInsets.only(left: 15),
@@ -826,224 +870,47 @@ class Add_New_List extends StatelessWidget {
                               child: Text(
                                 "@status",
                                 style: TextStyle(
-                                    fontSize: 11, color: Colors.black),
+                                    fontSize: 12, color: Colors.black),
                               ),
                             ),
                           ),
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(32),
-                                      bottomLeft: Radius.circular(32)),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 2,
-                                        offset: Offset(1.0, 2.0))
-                                  ]),
-                              height: 30,
-                              width: 35,
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 3),
-                                child: DropdownButtonFormField(
-                                  decoration:
-                                      InputDecoration(border: InputBorder.none),
-                                  icon: SvgPicture.asset(
-                                      "assests/caret-down-icon.svg"),
-                                  value: "Day",
-                                  items: [
-                                    DropdownMenuItem(
-                                      value: "Day",
-                                      child: Text(
-                                        "Day",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Day 1",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Day 1",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Day 2",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Day 2",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Day 3",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Day 3",
-                                    ),
-                                  ],
-                                  onChanged: (value) {
-                                    print("changed");
-                                  },
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.only(
-                                      topRight: Radius.circular(32),
-                                      bottomRight: Radius.circular(32)),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 2,
-                                        offset: Offset(1.0, 2.0))
-                                  ]),
-                              height: 30,
-                              width: 40,
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5),
-                                child: DropdownButtonFormField(
-                                  decoration:
-                                      InputDecoration(border: InputBorder.none),
-                                  icon: SvgPicture.asset(
-                                      "assests/caret-down-icon.svg"),
-                                  value: "Month",
-                                  items: [
-                                    DropdownMenuItem(
-                                      value: "Month",
-                                      child: Text(
-                                        "Month",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Month 1",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Month 1",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Month 2",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Month 2",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Month 3",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Month 3",
-                                    ),
-                                  ],
-                                  onChanged: (value) {
-                                    print("changed");
-                                  },
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(32),
-                                  boxShadow: [
-                                    BoxShadow(
-                                        color: Colors.grey,
-                                        blurRadius: 2,
-                                        offset: Offset(1.0, 2.0))
-                                  ]),
-                              height: 30,
-                              width: 60,
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 5),
-                                child: DropdownButtonFormField(
-                                  decoration:
-                                      InputDecoration(border: InputBorder.none),
-                                  icon: SvgPicture.asset(
-                                      "assests/caret-down-icon.svg"),
-                                  value: "Year",
-                                  items: [
-                                    DropdownMenuItem(
-                                      value: "Year",
-                                      child: Text(
-                                        "Year",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Year 1",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Year 1",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Year 2",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Year 2",
-                                    ),
-                                    DropdownMenuItem(
-                                      child: Text(
-                                        "Year 3",
-                                        style: TextStyle(
-                                            fontSize: 7, color: Colors.black),
-                                      ),
-                                      value: "Year 3",
-                                    ),
-                                  ],
-                                  onChanged: (value) {
-                                    print("changed");
-                                  },
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        SizedBox(width: 10),
+                        Expanded(
+                            child: SizedBox(
+                          height: 40,
+                          child: ElevatedButton(
+                              onPressed: () => _selectDate(context),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Color(0xffFFFFFF),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(32))),
+                              child: Text(
+                                "${dob}",
+                                style: TextStyle(
+                                    fontSize: 12, color: Color(0xff4CC171)),
+                              )),
+                        )),
                       ],
                     ),
                   ),
                   SizedBox(height: 10),
                   Padding(
-                    padding: const EdgeInsets.only(left: 20, right: 130),
+                    padding: const EdgeInsets.only(left: 20, right: 103),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Price Min",
                           style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 13,
                               color: Color(0xff585D5E),
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "Price Max",
                           style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 13,
                               color: Color(0xff585D5E),
                               fontWeight: FontWeight.bold),
                         ),
@@ -1066,18 +933,21 @@ class Add_New_List extends StatelessWidget {
                                     blurRadius: 2,
                                     offset: Offset(1.0, 2.0))
                               ]),
-                          height: 30,
+                          height: 40,
                           width: MediaQuery.of(context).size.width / 2.5,
                           child: Padding(
                             padding: const EdgeInsets.only(left: 15),
                             child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "Price",
-                                style: TextStyle(
-                                    fontSize: 11, color: Colors.black),
-                              ),
-                            ),
+                                alignment: Alignment.centerLeft,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(bottom: 10),
+                                    border: InputBorder.none,
+                                    hintText: "Price",
+                                    hintStyle: TextStyle(
+                                        fontSize: 12, color: Colors.black),
+                                  ),
+                                )),
                           ),
                         ),
                         Container(
@@ -1090,18 +960,21 @@ class Add_New_List extends StatelessWidget {
                                     blurRadius: 2,
                                     offset: Offset(1.0, 2.0))
                               ]),
-                          height: 30,
+                          height: 40,
                           width: MediaQuery.of(context).size.width / 2.5,
                           child: Padding(
                             padding: const EdgeInsets.only(left: 15),
                             child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                "Price",
-                                style: TextStyle(
-                                    fontSize: 11, color: Colors.black),
-                              ),
-                            ),
+                                alignment: Alignment.centerLeft,
+                                child: TextFormField(
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.only(bottom: 10),
+                                    border: InputBorder.none,
+                                    hintText: "Price",
+                                    hintStyle: TextStyle(
+                                        fontSize: 12, color: Colors.black),
+                                  ),
+                                )),
                           ),
                         ),
                       ],
@@ -1122,7 +995,7 @@ class Add_New_List extends StatelessWidget {
                           borderRadius: BorderRadius.circular(32))),
                   child: Text(
                     "Add",
-                    style: TextStyle(fontSize: 11, color: Colors.white),
+                    style: TextStyle(fontSize: 12, color: Colors.white),
                   )),
             ),
             SizedBox(height: 20),

@@ -413,7 +413,7 @@ class Alert extends StatelessWidget {
                           borderRadius: BorderRadius.circular(32))),
                   child: Text(
                     "Delete",
-                    style: TextStyle(fontSize: 9, color: Colors.white),
+                    style: TextStyle(fontSize: 10, color: Colors.white),
                   )),
             ),
             SizedBox(height: 10),
@@ -428,7 +428,7 @@ class Alert extends StatelessWidget {
                           borderRadius: BorderRadius.circular(32))),
                   child: Text(
                     "Cancel",
-                    style: TextStyle(fontSize: 7,color: Colors.white),
+                    style: TextStyle(fontSize: 8, color: Colors.white),
                   )),
             )
           ],

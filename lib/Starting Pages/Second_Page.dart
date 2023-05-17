@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:multi_vendor/Starting%20Pages/Third_Page.dart';
 
 class Second_Page extends StatelessWidget {
+
   const Second_Page({Key? key}) : super(key: key);
 
   @override
@@ -16,12 +17,12 @@ class Second_Page extends StatelessWidget {
             SizedBox(height: 50),
             Text(
               "Be Connected, Be Smart",
-              style: TextStyle(fontSize: 21, color: Color(0xffFD9F00)),
+              style: TextStyle(fontSize: 21, color: Color(0xffFD9F00),fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
             Text(
               "   Text to Fill provides a flexible platform to sell your products or\n  services so that you can focus on your sales provides a flexible\nplatform to sell your products or services so that you can focus on ",
-              style: TextStyle(fontSize: 11, color: Color(0xff585D5E)),
+              style: TextStyle(fontSize: 12, color: Color(0xff585D5E)),
             ),
             SizedBox(height: 30),
             SvgPicture.asset("assests/slider two.svg"),
@@ -30,7 +31,7 @@ class Second_Page extends StatelessWidget {
               width: 180,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (BuildContext context) {
                       return Third_Page();
                     }));

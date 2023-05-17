@@ -34,7 +34,7 @@ class _RelestedListViewState extends State<RelestedListView> {
             )
           ]),
       height: 70,
-      width: MediaQuery.of(context).size.width / 3,
+      width: MediaQuery.of(context).size.width / 2.5,
       child: Row(
         children: [
           Image.asset(widget.img),
@@ -45,17 +45,17 @@ class _RelestedListViewState extends State<RelestedListView> {
               Text(
                 widget.txt1,
                 style: TextStyle(
-                    fontSize: 8,
+                    fontSize: 10,
                     color: Color(0xff585D5E),
                     fontWeight: FontWeight.bold),
               ),
               Text(
                 widget.txt2,
-                style: TextStyle(fontSize: 7, color: Color(0xffACACAC)),
+                style: TextStyle(fontSize: 8, color: Color(0xffACACAC)),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: 2),
               Padding(
-                padding: const EdgeInsets.only(left: 7),
+                padding: const EdgeInsets.only(left: 14),
                 child: Container(
                   decoration: BoxDecoration(
                       color: Colors.white,
@@ -69,7 +69,7 @@ class _RelestedListViewState extends State<RelestedListView> {
                             offset: Offset(1.0, 2.0))
                       ]),
                   height: 15,
-                  width: MediaQuery.of(context).size.width / 6.5,
+                  width: MediaQuery.of(context).size.width / 5,
                   child: Padding(
                     padding: const EdgeInsets.only(left: 5),
                     child: Row(
@@ -77,10 +77,11 @@ class _RelestedListViewState extends State<RelestedListView> {
                         Text(
                           widget.txt3,
                           style:
-                              TextStyle(fontSize: 7, color: Color(0xff4CC171)),
+                              TextStyle(fontSize: 9, color: Color(0xff4CC171)),
                         ),
+                        SizedBox(width: 5),
                         RatingBar.builder(
-                          itemSize: 8,
+                          itemSize: 9,
                           initialRating: 3,
                           minRating: 1,
                           direction: Axis.horizontal,

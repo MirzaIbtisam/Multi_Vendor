@@ -107,8 +107,16 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.1"
   js:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: js
       sha256: "5528c2f391ededb7775ec1daa69e65a2d61276f7552de2b5f7b8d34ee9fd4ab7"
@@ -147,6 +155,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
+  otp_text_field:
+    dependency: "direct main"
+    description:
+      name: otp_text_field
+      sha256: "340b1ed135e1abe9fac0aaebe1c4e48147d95a3e29ecb03ae45ad63a7c28d65d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.3"
   path:
     dependency: transitive
     description:

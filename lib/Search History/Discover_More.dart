@@ -94,7 +94,7 @@ class Discover_More extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                   ),
                   hintText: "Search",
-                  hintStyle: TextStyle(fontSize: 10, color: Color(0xff585D5E)),
+                  hintStyle: TextStyle(fontSize: 12, color: Color(0xff585D5E)),
                 ),
               ),
             ),
@@ -122,7 +122,7 @@ class Discover_More extends StatelessWidget {
                         Text(
                           "Search History",
                           style:
-                              TextStyle(fontSize: 14, color: Color(0xff585D5E)),
+                              TextStyle(fontSize: 15, color: Color(0xff585D5E)),
                         ),
                         SvgPicture.asset("assests/Path 23350.svg")
                       ],
@@ -155,7 +155,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -179,7 +179,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -203,7 +203,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -233,7 +233,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -257,7 +257,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -281,7 +281,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -311,7 +311,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -335,7 +335,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -359,7 +359,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -389,7 +389,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -413,7 +413,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -437,7 +437,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -467,7 +467,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -491,7 +491,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -515,7 +515,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -545,7 +545,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -569,7 +569,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -593,7 +593,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff4CC171)),
+                                        fontSize: 9, color: Color(0xff4CC171)),
                                   ),
                                 ),
                               ),
@@ -631,7 +631,7 @@ class Discover_More extends StatelessWidget {
                         Text(
                           "Search History",
                           style:
-                              TextStyle(fontSize: 14, color: Color(0xff585D5E)),
+                              TextStyle(fontSize: 15, color: Color(0xff585D5E)),
                         ),
                         SvgPicture.asset("assests/Path 23350.svg")
                       ],
@@ -664,7 +664,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff85DAE9)),
+                                        fontSize: 9, color: Color(0xff85DAE9)),
                                   ),
                                 ),
                               ),
@@ -688,7 +688,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff85DAE9)),
+                                        fontSize: 9, color: Color(0xff85DAE9)),
                                   ),
                                 ),
                               ),
@@ -712,7 +712,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff85DAE9)),
+                                        fontSize: 9, color: Color(0xff85DAE9)),
                                   ),
                                 ),
                               ),
@@ -742,7 +742,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Lounge Coffee Bar",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff85DAE9)),
+                                        fontSize: 9, color: Color(0xff85DAE9)),
                                   ),
                                 ),
                               ),
@@ -766,7 +766,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Cozy royal Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff85DAE9)),
+                                        fontSize: 9, color: Color(0xff85DAE9)),
                                   ),
                                 ),
                               ),
@@ -790,7 +790,7 @@ class Discover_More extends StatelessWidget {
                                   child: Text(
                                     "Adorable Room",
                                     style: TextStyle(
-                                        fontSize: 8, color: Color(0xff85DAE9)),
+                                        fontSize: 9, color: Color(0xff85DAE9)),
                                   ),
                                 ),
                               ),

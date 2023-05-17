@@ -1,9 +1,26 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:multi_vendor/Mapping/Map_1.dart';
 import 'package:multi_vendor/Starting%20Pages/Second_Page.dart';
 
-class First_Page extends StatelessWidget {
+class First_Page extends StatefulWidget {
   const First_Page({Key? key}) : super(key: key);
+
+  @override
+  State<First_Page> createState() => _First_PageState();
+}
+
+class _First_PageState extends State<First_Page> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+        Duration(seconds: 5),
+        () => Navigator.pushReplacement(context as BuildContext,
+            MaterialPageRoute(builder: (context) => Map_1())));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +33,15 @@ class First_Page extends StatelessWidget {
             SizedBox(height: 50),
             Text(
               "Be Connected, Be Smart",
-              style: TextStyle(fontSize: 21, color: Color(0xffFD9F00)),
+              style: TextStyle(
+                  fontSize: 21,
+                  color: Color(0xffFD9F00),
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
             Text(
               "   Text to Fill provides a flexible platform to sell your products or\n  services so that you can focus on your sales provides a flexible\nplatform to sell your products or services so that you can focus on ",
-              style: TextStyle(fontSize: 11, color: Color(0xff585D5E)),
+              style: TextStyle(fontSize: 12, color: Color(0xff585D5E)),
             ),
             SizedBox(height: 30),
             SvgPicture.asset("assests/Slider one.svg"),
@@ -30,7 +50,7 @@ class First_Page extends StatelessWidget {
               width: 180,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.of(context).push(
+                    Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (BuildContext context) {
                       return Second_Page();
                     }));
